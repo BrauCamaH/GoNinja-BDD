@@ -1,5 +1,7 @@
 <?php
     include("connection.php");
-    $sql = "SELECT email, contraseña FROM usuarios";
-    $result= mysql_query($connect, $sql);
+
+    $sql = "SELECT u.nombre, u.contraseña FROM Usuarios u";
+
+    $result= mysqli_query($connect, $sql);
 ?>
