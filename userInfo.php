@@ -5,17 +5,15 @@
 
     $sql = "SELECT u.nombre, u.apellido, u.email, u.nickname FROM Usuarios u WHERE u.id ='". $id . "';";
 
+    //$sql = "SELECT u.nombre, u.apellido, u.email, u.nickname FROM Usuarios u WHERE u.id ='". 1 . "';";
 
-    $logininfo = mysqli_fetch_assoc($sql);
+    $info = mysqli_query($connect, $sql) or die("query failed");
+
+    $logininfo = mysqli_fetch_assoc($info);
     $name = $logininfo["nombre"];
     $lastname = $logininfo["apellido"];
     $email = $logininfo["email"];
     $nickname = $logininfo["nickname"];
 
-    if($query_password != $password){
-        echo "Incorrect password";
-        exit();
-    }
-
-    echo '0';
+    echo $name ."\t". $lastname ."\t". $email ."\t". $nickname ."\t";
 ?>
