@@ -4,7 +4,7 @@
     $email= $_POST["email"];
     $password= $_POST["password"];
 
-    $sql = "SELECT u.email, u.contraseña FROM Usuarios u WHERE email ='". $email . "';";
+    $sql = "SELECT u.id, u.email, u.contraseña FROM Usuarios u WHERE email ='". $email . "';";
 
 
     $namecheck = mysqli_query($connect, $sql) or die("query failed");
@@ -15,11 +15,12 @@
 
     $logininfo = mysqli_fetch_assoc($namecheck);
     $query_password = $logininfo["contraseña"];
+    $query_id =  $logininfo["id"];
 
     if($query_password != $password){
         echo "Incorrect password";
         exit();
     }
 
-    echo '0';
+    echo '0'. "\t". $query_id .'\t';
 ?>
