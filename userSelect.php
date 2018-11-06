@@ -21,6 +21,5 @@
         echo "Incorrect password";
         exit();
     }
-
-    echo '0'. "\t". $query_id .'\t';
+    echo '0'. "\t". $query_id ."\t";
 ?>
