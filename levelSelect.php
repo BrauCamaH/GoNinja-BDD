@@ -1,7 +1,7 @@
 <?php
     include("connection.php");
     $id= $_POST["id"];
-    $sql = "SELECT l.nombre, l.puntos , l.intentos , l.completado FROM Niveles u  WHERE id ='". $id . "';";
+    $sql = "SELECT l.nombre, l.puntos , l.intentos , l.completado FROM Niveles l  WHERE id ='". $id . "';";
 
     $result= mysqli_query($connect, $sql);
 
