@@ -3,14 +3,15 @@
 
     $userId= $_POST["userId"];
     
-    $sql = "SELECT l.id FROM Niveles l  
-    LEFT JOIN Usuarios s
-    ON l.id = s.id
-    WHERE s.id ='". 1 . "';";
+    
+    $sql = "SELECT l.* FROM Niveles l  
+    LEFT  JOIN Usuarios s
+    ON l.usuario = s.id
+    WHERE s.id ='". $userId . "';";
 
     $result= mysqli_query($connect, $sql) ;
     if (!$result) {
-        die("Select failed");
+        die("Select failed"); 
     }
 
     if(mysqli_num_rows($result)>0){
