@@ -4,8 +4,8 @@
     $userId = $_POST["userId"];
 
      $sql = "SELECT * FROM Niveles l  
-            INNER JOIN Usuarios s
-            ON l.id = s.id
+            LEFT JOIN Usuarios s
+            ON l.usuario = s.id
             WHERE s.id ='". $userId . "';";
  
     $result= mysqli_query($connect, $sql);

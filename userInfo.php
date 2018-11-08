@@ -9,11 +9,13 @@
 
     $info = mysqli_query($connect, $sql) or die("query failed");
 
+
     $logininfo = mysqli_fetch_assoc($info);
     $name = $logininfo["nombre"];
     $lastname = $logininfo["apellido"];
     $email = $logininfo["email"];
     $nickname = $logininfo["nickname"];
 
-    echo $name ."\t". $lastname ."\t". $email ."\t". $nickname ."\t";
+
+    echo $name ."\t". $lastname ."\t". $email ."\t". $nickname ."\t". $id ;
 ?>
