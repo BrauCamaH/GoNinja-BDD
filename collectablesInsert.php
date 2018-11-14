@@ -1,12 +1,13 @@
 <?php
+    //collectablesInsert
     include("connection.php");
 
     $isActive = $_POST["isActive"];
     $position = $_POST["position"];
-    $levelId=$POST["LevelId"];
+    $levelId= $_POST["levelId"];
 
 
-    $sql="INSERT INTO Colleccionables (activo, posicion, nivel) 
+    $sql="INSERT INTO Coleccionables (activo, posicion, nivel) 
           VALUES ('".$isActive."','".$position."','".$levelId."')";
 
     $result= mysqli_query($connect, $sql);
