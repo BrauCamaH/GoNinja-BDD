@@ -3,22 +3,21 @@
 
     $levelId = $_POST["levelId"];
     
-    $sql = "SELECT l.* FROM Niveles l  
+    $sql = "SELECT c.* FROM Coleccionables c  
+    LEFT  JOIN Niveles l
+    ON c.nivel = l.id
     LEFT  JOIN Usuarios s
     ON l.usuario = s.id
-    LEFT  JOIN Coleccionables c
-    ON c.usuario = l.id
-    WHERE s.id ='". $levelId . "';";
+    WHERE l.id = $levelId ";
 
-    $result= mysqli_query($connect, $sql) ;
-    if (!$result) {
-        die("Select failed"); 
-    }
+    $result= mysqli_query($connect, $sql) or die("error") ;
 
     if(mysqli_num_rows($result)>0){
         while ($row = mysqli_fetch_assoc($result)){
-            echo  $row["id"] . "\t";
+            echo  $row["id"] . "\t" . $row["activo"] . "\t" . $row["posicion"] . "\t" . $row["nivel"] . ";";
         }
+    }else{
+        echo '0';
     }
 
 ?>

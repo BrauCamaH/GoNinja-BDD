@@ -11,5 +11,5 @@
           VALUES ('".$name."','".$score."','".$attemps."','".$isComplete."','".$userId."')";
 
     $result= mysqli_query($connect, $sql);
-
+    
 ?>

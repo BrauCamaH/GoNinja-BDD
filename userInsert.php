@@ -11,6 +11,6 @@
           VALUES ('".$name."','".$lastName."','".$nickname."','".$email."','".$password."')";
 
 
-    $result= mysqli_query($connect, $sql);
+    $result= mysqli_query($connect, $sql,$c);
     
 ?>
