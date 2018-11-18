@@ -10,7 +10,5 @@
     $sql="INSERT INTO Usuarios (nombre, apellido, nickname,email, contraseña) 
           VALUES ('".$name."','".$lastName."','".$nickname."','".$email."','".$password."')";
 
-
     $result= mysqli_query($connect, $sql,$c);
-    
 ?>

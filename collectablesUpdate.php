@@ -1,5 +1,4 @@
 <?php
-    //collectablesInsert
     include("connection.php");
 
     $id= $_POST["id"];
@@ -11,6 +10,6 @@
     $sql = "UPDATE coleccionables c 
     SET   c.activo=$isActive , c.posicion = $position, c.nivel = $levelId
     WHERE id ='". $id . "';";
-
-    mysqli_query($connect, $sql) or die("query failed");
+    
+    $result= mysqli_query($connect, $sql) ;
 ?>

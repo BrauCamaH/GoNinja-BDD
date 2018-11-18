@@ -8,7 +8,7 @@
     ON c.nivel = l.id
     LEFT  JOIN Usuarios s
     ON l.usuario = s.id
-    WHERE l.id = $levelId ";
+    WHERE l.id = $levelId   ORDER BY  c.posicion";
 
     $result= mysqli_query($connect, $sql) or die("error") ;
 
