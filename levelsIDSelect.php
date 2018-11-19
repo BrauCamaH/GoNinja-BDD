@@ -7,7 +7,7 @@
     $sql = "SELECT l.* FROM Niveles l  
     LEFT  JOIN Usuarios s
     ON l.usuario = s.id
-    WHERE s.id ='". $userId . "';";
+    WHERE s.id ='". $userId . "' ORDER BY l.nombre;";
 
     $result= mysqli_query($connect, $sql) ;
     if (!$result) {
